@@ -20,9 +20,11 @@ ENV NODE_ENV=production
 EXPOSE 3000
 
 
-# Start MongoDB service
+# Install MongoDB
 RUN apk add --no-cache mongodb
-RUN mkdir -p /data/db
 
-# Start the MongoDB service and the backend server
-CMD mongod --bind_ip_all --dbpath /data/db & npm start
+# Copy the seed script
+COPY seed.js .
+
+# Start the MongoDB service and run the seed script
+CMD mongod --bind_ip_all --dbpath /data/db & sleep 5 && node seed.js && npm start

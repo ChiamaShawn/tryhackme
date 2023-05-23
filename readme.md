@@ -16,6 +16,8 @@ To build and run the Docker containers, follow these steps:
 
 5. Access the frontend application in your browser by visiting http://localhost:5000.
 
+  - The user logins are username:- admin password:- admin@tryhackme
+
 6. The backend API endpoints will be available at http://localhost:3000.
 
 The Task Endpoints include: -
